@@ -1,0 +1,47 @@
+    class Meta:
+        verbose_name_plural=verbose_name='订单商品'
+        unique_together = ('user','goods')#联合唯一索引
+
+在serializer不能直接self.request,user
+'''
+继承关系
+1、GenericViewSet(viewset) -drf
+    2、GenericView         -drf
+         3、APIView        -drf
+              4、View      -django
+mixin(通过mixin来区别)
+    CreateModelMixin   #新建创建
+    ListModelMixin     #列表全部
+    RetrieveModelMixin #获取详情
+    UpdateModelMixin   #更新和部分修改
+    DestroyModelMixin  #删除功能
+'''
+让远程服务器不会隔一段时间自动退出
+yum install tmux
+输入 tmux
+查询文件
+sudo find / -name python
+查看登录ip
+last -f /var/log/wtmp
+
+mkdir: cannot create directory ‘/root’: Permission denied
+没有权限，到root下面新建文件夹
+
+su -
+su root
+
+更改 .bashrc
+vi ~/.bashrc
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh 在root运行了就不能在普通用户使用，切记切记
+
+GRANT ALL PRIVILEGES ON *.* TO 'fsh'@'%' IDENTIFIED BY 'xxx' WITH GRANT OPTION;
+
+Err] [Dtf] Finished - Unsuccessfully Navicat 数据传输报错更改 工具>服务器工具>mysql>变量>max_allowed_packet值改大
+
+
+cnpm run build 生成静态文件
+cnpm run dev
+
+在serializer里面调用serializer会出现图片没有域名，需要加个context
+goods_json = GoodsSerializer(goods_ins,many=False,context={'request':self.context['request']}).data
